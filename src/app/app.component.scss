@@ -1,0 +1,44 @@
+// create a minimal button but neon color 
+.btn-minimal {
+  background-color: transparent;
+  border: 1px solid #eb3e93;
+  box-shadow: 0 0 10px #eb3e93;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 0px 8px 8px 0;
+  transition: all 0.3s ease;
+}
+
+// create a minimal input but neon color 
+.input-minimal {
+  background-color: transparent;
+  border: 1px solid #eb3e93;
+  box-shadow: 0 0 10px #eb3e93;
+  border-radius: 8px 0 0 8px;
+  color: white;
+  padding: 10px 0;
+  text-align: left;
+  width: 100%;
+  font-size: 18px;
+  width: 66%;
+}
+
+.input-minimal:focus {
+  outline: none;
+  box-shadow: 0 0 10px #eb3e93;
+  border-bottom: 1px solid aquamarine;
+  box-shadow: 0 0 10px #8335d8;
+}
+
+.center-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  color: white;
+}
