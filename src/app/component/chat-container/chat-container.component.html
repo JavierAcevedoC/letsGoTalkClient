@@ -1,0 +1,16 @@
+<div  class="container">
+    @for (item of messages; track $index;) {
+    <div id="msg-{{$index}}" style="background: linear-gradient(45deg,#eb3e93, aquamarine); border-radius: 8px;"> 
+        <h1 >
+            <div >
+                <strong style="background: linear-gradient(45deg,white,white); border-radius: 8px 0 8px 0; font-weight: 900;">
+                {{ item.username }} :
+                </strong>
+            </div>
+            <div >
+                {{ item.content}}
+            </div> 
+        </h1>
+    </div>
+    }
+</div>
