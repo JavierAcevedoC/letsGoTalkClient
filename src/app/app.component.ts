@@ -2,12 +2,13 @@ import { Component, inject, OnDestroy } from '@angular/core';
 import { ChatService } from './service/chat.service';
 import { Subscription } from 'rxjs';
 import { ChatContainerComponent } from './component/chat-container/chat-container.component';
+import { HttpClient, HttpClientModule, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    ChatContainerComponent
+    ChatContainerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -25,6 +26,11 @@ export class AppComponent implements OnDestroy {
     if(username) {
       this.currentUsername = username;
     }
+    
+    const s = this.chatService.getHistory().subscribe(message => {
+      this.messages = message.reverse();
+      s.unsubscribe();
+    });
 
     this.subs = this.chatService.getMessages().subscribe(message => {
       this.messages = [...this.messages, message];
